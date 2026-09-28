@@ -1,23 +1,23 @@
-package com.farmaciahospitalar.service;
+    package com.farmaciahospitalar.service;
 
-import com.farmaciahospitalar.model.Medicamento;
-import com.farmaciahospitalar.repository.MedicamentoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+    import com.farmaciahospitalar.model.Medicamento;
+    import com.farmaciahospitalar.repository.MedicamentoRepository;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
 
-import java.util.List;
+    import java.util.List;
 
-@Service
-public class MedicamentoService {
+    @Service
+    public class MedicamentoService {
 
-    @Autowired
-    private MedicamentoRepository medicamentoRepository;
+        @Autowired
+        private MedicamentoRepository medicamentoRepository;
 
-    public Medicamento salvar(Medicamento medicamento) {
-        return medicamentoRepository.save(medicamento);
+        public Medicamento salvar(Medicamento medicamento) {
+            return medicamentoRepository.save(medicamento);
+        }
+
+        public List<Medicamento> listar() {
+            return medicamentoRepository.findAll();
+        }
     }
-
-    public List<Medicamento> listar() {
-        return medicamentoRepository.findAll();
-    }
-}
